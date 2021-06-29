@@ -1,24 +1,18 @@
 <template>
-  <Modal />
-  <input type="text" ref="nice">
-  <button @click="handleClick">click</button>
-  <h5 id="meg" ></h5>
+  <Modal header="Display message" theme="d"  />
+
 </template>
 
 <script>
-import Modal from './components/Modal.vue'
+import Modal from './components/Modal'
 
 export default {
   name: 'App',
   components: {
     Modal
   },
-  methods: {
-    handleClick() {
-      this.$refs.nice.focus();
-    }
-  }
 }
+
 </script>
 
 <style>

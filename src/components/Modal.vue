@@ -1,11 +1,17 @@
 <template>
     <div class="backdrop" >
-        <div class="modal" >
-            <p>model content</p>
+        <div class="modal" :class="{ sale: theme === 'd' }" >
+            <p>{{header}} </p>
         </div>
     </div>
 </template>
 
+
+<script>
+export default {
+    props: ['header' , 'theme']
+}
+</script>
 
 <style scoped>
     .modal {
@@ -23,5 +29,10 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5) ;
+    }
+
+    .modal.sale {
+        background-color: crimson;
+
     }
 </style>
