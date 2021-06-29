@@ -1,15 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Modal />
+  <input type="text" ref="nice">
+  <button @click="handleClick">click</button>
+  <h5 id="meg" ></h5>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Modal from './components/Modal.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Modal
+  },
+  methods: {
+    handleClick() {
+      this.$refs.nice.focus();
+    }
   }
 }
 </script>
