@@ -1,6 +1,7 @@
 <template>
-  <Modal header="Display message" theme="d"  />
-
+  <div v-if="showModal" >
+      <Modal header="Display message" theme="d" @close="toggleM"  />
+  </div>
 </template>
 
 <script>
@@ -11,6 +12,16 @@ export default {
   components: {
     Modal
   },
+  data() {
+    return {
+      showModal: true,
+    }
+  },
+  methods: {
+    toggleM() {
+      this.showModal = !this.showModal
+    }
+  }
 }
 
 </script>
