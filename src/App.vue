@@ -1,7 +1,13 @@
 <template>
   <div v-if="showModal" >
-      <Modal header="Display message" theme="d" @close="toggleM"  />
+      <Modal header="Modal 1 homie" theme="d" @close="toggleM"  />
   </div>
+  <button @click="toggleM" >show modal 1 </button>
+
+  <div v-if="showModalTwo" >
+      <Modal header="Modal 2 homie" theme="d" @close="toggleM2"  />
+  </div>
+  <button @click="toggleM2" >show modal 2 </button>
 </template>
 
 <script>
@@ -14,12 +20,16 @@ export default {
   },
   data() {
     return {
-      showModal: true,
+      showModal: false,
+      showModalTwo: false,
     }
   },
   methods: {
     toggleM() {
       this.showModal = !this.showModal
+    },
+    toggleM2() {
+      this.showModalTwo = !this.showModalTwo
     }
   }
 }
